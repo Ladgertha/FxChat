@@ -6,11 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class MainClassClient extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../../../sample.fxml"));
-        primaryStage.setTitle("Мой чат");
+        Parent root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
+        primaryStage.setTitle("Наш уютный чатик");
         primaryStage.setScene(new Scene(root, 400, 400));
         primaryStage.show();
     }

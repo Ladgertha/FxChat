@@ -1,0 +1,17 @@
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<VBox fx:controller="ru.ladgertha.chat.Controller"
+      xmlns:fx="http://javafx.com/fxml" alignment="center" >
+    <TextArea fx:id="chatArea" editable="false" VBox.vgrow="ALWAYS"/>
+    <HBox>
+        <TextField fx:id="msgField" promptText="Введите сообщение..." HBox.hgrow="ALWAYS" onAction="#sendMsg"/>
+        <Button text="Отправить" onAction="#sendMsg"
+         style="-fx-background-color: linear-gradient(#efd100 0, #e2a233 38%, #f0c328 60%, #fff1a3 86%, #ffe13e 100%);"
+        />
+    </HBox>
+</VBox>
