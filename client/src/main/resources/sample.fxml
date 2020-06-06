@@ -5,13 +5,27 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ListView?>
 <VBox fx:controller="ru.ladgertha.chat.Controller"
-      xmlns:fx="http://javafx.com/fxml" alignment="center" >
-    <TextArea fx:id="chatArea" editable="false" VBox.vgrow="ALWAYS"/>
-    <HBox>
-        <TextField fx:id="msgField" promptText="Введите сообщение..." HBox.hgrow="ALWAYS" onAction="#sendMsg"/>
-        <Button text="Отправить" onAction="#sendMsg"
-         style="-fx-background-color: linear-gradient(#efd100 0, #e2a233 38%, #f0c328 60%, #fff1a3 86%, #ffe13e 100%);"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+    <HBox fx:id="authPanel">
+        <TextField fx:id="loginField" promptText="Логин" HBox.hgrow="ALWAYS"/>
+        <PasswordField fx:id="passwordField" promptText="Пароль" HBox.hgrow="ALWAYS" onAction="#sendAuthMessage"/>
+        <Button text="Подключиться" onAction="#sendAuthMessage"
+                style="-fx-background-color: linear-gradient(#efd100 0, #e2a233 38%, #f0c328 60%, #fff1a3 86%, #ffe13e 100%);"
+        />
+    </HBox>
+
+    <HBox VBox.vgrow="ALWAYS" >
+        <TextArea HBox.hgrow="ALWAYS" fx:id="chatArea" editable="false" VBox.vgrow="ALWAYS"/>
+        <ListView HBox.hgrow="ALWAYS" fx:id="clientsOnlineList" minWidth="200"/>
+    </HBox>
+
+    <HBox fx:id="messagePanel">
+        <TextField fx:id="messageField" promptText="Введите сообщение..." HBox.hgrow="ALWAYS" onAction="#sendMessage"/>
+        <Button text="Отправить" onAction="#sendMessage"
+                style="-fx-background-color: linear-gradient(#efd100 0, #e2a233 38%, #f0c328 60%, #fff1a3 86%, #ffe13e 100%);"
         />
     </HBox>
 </VBox>
